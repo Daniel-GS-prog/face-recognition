@@ -1,0 +1,18 @@
+.Tilt {
+    background: #54B163;
+    background: -webkit-linear-gradient(top left, #54B163, #FF9855);
+    background: -moz-linear-gradient(top left, #54B163, #FF9855);
+    background: linear-gradient(to bottom right, #54B163, #FF9855);    
+  
+}
+
+.Tilt:hover{
+    scale:1.1;
+}
+
+img {
+    width: 80%;
+    padding-top: 15px;
+    padding-left: 15px;
+    
+}
