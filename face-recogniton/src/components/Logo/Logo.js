@@ -10,7 +10,7 @@ const Logo = () => {
         <div className='' >
         <Tilt className=' Tilt br2 shadow-2' >
             
-                <img src={image}/>
+                <img className='logo' src={image}/>
            
          </Tilt>
 

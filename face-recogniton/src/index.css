@@ -5,13 +5,13 @@ body {
   
 
     /* Created with https://www.css-gradient.com */
-background: linear-gradient(to bottom right, #54B163, #FF9855);
+background: linear-gradient(to right, #54B163, #FF9855);
 }
 
 button {
   cursor: pointer;
 }
 
-html, #root, body {
-  height: 100%;
+#root, html, body {
+  height:100%;
 }

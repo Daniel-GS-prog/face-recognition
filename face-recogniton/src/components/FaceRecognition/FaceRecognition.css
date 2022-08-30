@@ -1,0 +1,17 @@
+
+.photo {
+    width: 150px;
+    height:auto;
+    margin-top: 10px;
+    border-radius: 5px;
+    border: 1px solid #54B163;
+}
+
+@media screen and (min-width: 900px) {
+
+    img {
+        width: 150px;
+        margin-top: 2px;
+    }
+
+}

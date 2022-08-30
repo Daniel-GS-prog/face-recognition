@@ -4,9 +4,10 @@
     background: -moz-linear-gradient(top left, #54B163, #FF9855);
     background: linear-gradient(to bottom right, #54B163, #FF9855);  
     
-    width: 100px;
-    height: 100px;
-    margin: 10px;
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,8 +18,11 @@
     scale:1.1;
 }
 
-img {
+.logo {
     width: 80%;
+    
+    margin:0;
+   
     
     
 }
@@ -27,5 +31,9 @@ img {
 
     .Tilt{
         margin-left: 50px;
+        width: 75px;
+        height:75px;
+        margin-bottom: -40px;
+       
     }
 }

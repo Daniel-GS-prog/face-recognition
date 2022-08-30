@@ -1,0 +1,23 @@
+
+.nav{
+    margin-top:0;
+    padding:0;
+
+    display: flex;
+    justify-content: flex-end;
+    
+}
+
+p{
+    margin:5px;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    cursor:pointer;
+}
+
+@media screen and (min-width: 900px)  {
+    p{
+        margin:20px;
+    }
+    
+}
