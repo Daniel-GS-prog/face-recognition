@@ -6,15 +6,15 @@ import './ImageLinkForm.css';
 const ImageLinkForm = () => {
     return (
         <div>
-        <p className='f5 center pa2'>
-            {'This Magic Brain will detect faces in your pictures. Give it a try'}
+        <p className='imageText'>
+            {'You give us the image, we give you the face. No questions asked.'}
         </p>
-        <div className='center'>
-        <div className='pa4 br3 shadow-5 form center pa2'>
-            <input className='f5 pa2 w-50' type='text' />
-            <button className='w-30 grow f5 link ph1 pv2 dib white bg-light-purple'>Detect</button>
+        <div className='center flex box'>
+            <div className='shadow-5 form'>
+                 <input className='' type='text' />
+                <button className=' grow bg-light-purple'>Detect</button>
+                </div>
             </div>
-        </div>
     
         </div>
     );

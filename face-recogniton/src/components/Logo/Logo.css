@@ -2,7 +2,14 @@
     background: #54B163;
     background: -webkit-linear-gradient(top left, #54B163, #FF9855);
     background: -moz-linear-gradient(top left, #54B163, #FF9855);
-    background: linear-gradient(to bottom right, #54B163, #FF9855);    
+    background: linear-gradient(to bottom right, #54B163, #FF9855);  
+    
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   
 }
 
@@ -12,7 +19,13 @@
 
 img {
     width: 80%;
-    padding-top: 15px;
-    padding-left: 15px;
     
+    
+}
+
+@media screen and (min-width: 900px){
+
+    .Tilt{
+        margin-left: 50px;
+    }
 }
