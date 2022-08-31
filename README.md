@@ -11,7 +11,7 @@ on the screen a blue box with the dimension of the face in a .png file
 
 
 <div style="text-align: center">
-<img src='ReadMe1.png' height='200' width='auto'>
+<img src='ReadMe1.png' height='200' width='auto'><br/>
 
 <img src='ReadMe2.png' height='200' width='auto'>
 </div>
