@@ -5,7 +5,9 @@ import Navigation from './components/Navigation/Navigation';
 import Logo from './components/Logo/Logo';
 import ImageLinkForm from './components/ImageLinkForm/ImageLinkForm';
 import Rank from './components/Rank/Rank';
-import FaceRecognition from './components/FaceRecognition/FaceRecognition'
+import FaceRecognition from './components/FaceRecognition/FaceRecognition';
+import Signin from './components/Signin/Signin';
+import Registration from './components/Registration/Registration';
 import './App.css';
 
 
@@ -36,6 +38,8 @@ class App extends Component {
         input: '',
         imageUrl: '',
         box:{},
+        route: 'signin', // when the app starts it does so in signin
+        isSignedIn: false
       }
     }
 
@@ -79,26 +83,55 @@ class App extends Component {
         .catch(err => console.log(err));
     }
 
+      // update state variable route to display the web content.
+      // This function goes to the SignIn form onclick Sign In.
+    onRouteChange = (route) => {
+      this.setState({route: route});
+      if(route === 'signout'){
+        this.setState({isSignedIn:false});
+      } else if (route === 'home'){
+        this.setState({isSignedIn:true})
+      }
+      
+    }
+    
+
   render(){
 
+    //destructuring:
+    const {isSignedIn, box, imageUrl, input, route} = this.state;
+    
     return (
       <div className="App">
     
-        <Navigation />
+        <Navigation 
+          onRouteChange={this.onRouteChange} 
+          isSignedIn={isSignedIn}
+         />
         <Logo />
-        <Rank />
+      
+        {route === 'home' 
+        ? <div> 
+            <Rank />
 
-        <ImageLinkForm 
-          onInputChange={this.onInputChange} 
-          onButtonSubmit={this.onButtonSubmit}/>
+            <ImageLinkForm 
+              onInputChange={this.onInputChange} 
+              onButtonSubmit={this.onButtonSubmit}/>
 
-        <FaceRecognition 
-          box={this.state.box} 
-          imageUrl={this.state.imageUrl}/>
+            <FaceRecognition 
+              box={box} 
+              imageUrl={imageUrl}/>
+          </div>
         
+        :  (
+            route === 'signin'
+            ? <Signin onRouteChange={this.onRouteChange} />
+            : <Registration onRouteChange={this.onRouteChange} />
+          )
+        }
+          
       </div>
-    );
-    
+    );  
   }
 }
 
