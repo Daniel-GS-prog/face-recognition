@@ -42,7 +42,7 @@ class App extends Component {
         isSignedIn: false
       }
     }
-    // i'm just testing the git branch way of working
+   
 
     // storing the array of values from the API;
     calculateFaceLocation = (data) => {
