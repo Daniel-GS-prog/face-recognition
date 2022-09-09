@@ -39,8 +39,26 @@ class App extends Component {
         imageUrl: '',
         box:{},
         route: 'signin', // when the app starts it does so in signin
-        isSignedIn: false
+        isSignedIn: false,
+        user: {
+          id: '',
+          name: '',
+          email: '',
+          entries: 0,
+          joined: ''
+        }
       }
+    }
+
+    //updating user information for display
+    loadUser = (data) =>{
+      this.setState({user: {
+        id: data.id,
+        name: data.name,
+        email: data.email,
+        entries: data.entries,
+        join: data.join
+      }})
     }
 
     // storing the array of values from the API;
@@ -99,7 +117,9 @@ class App extends Component {
   render(){
 
     //destructuring:
-    const {isSignedIn, box, imageUrl, input, route} = this.state;
+    // user state variable will be passed to the rank component directly
+    // and to the signing and registration via loadUser():
+    const {isSignedIn, box, imageUrl, input, route, user } = this.state;
     
     return (
       <div className="App">
@@ -112,7 +132,7 @@ class App extends Component {
       
         {route === 'home' 
         ? <div> 
-            <Rank />
+            <Rank name={user.name} entries={user.entries}/>
 
             <ImageLinkForm 
               onInputChange={this.onInputChange} 
@@ -125,8 +145,8 @@ class App extends Component {
         
         :  (
             route === 'signin'
-            ? <Signin onRouteChange={this.onRouteChange} />
-            : <Registration onRouteChange={this.onRouteChange} />
+            ? <Signin loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
+            : <Registration loadUser={this.loadUser} onRouteChange={this.onRouteChange} />
           )
         }
           

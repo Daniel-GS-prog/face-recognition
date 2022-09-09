@@ -1,15 +1,15 @@
 import React from 'react';
 import './Rank.css';
 
-
-const Rank = () => {
+// updating the user's information from props name and entries:
+const Rank = ({name, entries}) => {
     return (
         <div className='center display-flex '>
             <div className='white f4 text'>
-            {"Daniel, you're current rank is... "} 
+            {`${name}, you're current rank is... `} 
 
                 <div className='white f3'>
-                {"#5"}
+                {`${entries}`}
                 </div>
 
             </div>
