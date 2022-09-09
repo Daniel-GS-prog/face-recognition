@@ -21,6 +21,7 @@ class Signin extends Component {
         this.setState({signInPassword: event.target.value});
     }
     onSubmitSignin = () => {
+        //fetching API, passing parameters and method:
         fetch('http://localhost:3000/signin', {
             method:'post',
             headers: {'Content-Type': 'application/json'},
@@ -29,6 +30,7 @@ class Signin extends Component {
                 password: this.state.signInPassword
             })
         })
+        //on success loading the application:
         .then(response => response.json())
         .then(data => {
             if(data === 'success'){
