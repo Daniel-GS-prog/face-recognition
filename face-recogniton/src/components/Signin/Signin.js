@@ -32,12 +32,12 @@ class Signin extends Component {
         })
         //on success loading the application:
         .then(response => response.json())
-        .then(data => {
-            if(data === 'success'){
-               this.props.onRouteChange('home'); 
+        .then(user => {
+            if(user.id){
+                this.props.loadUser(user);
+                this.props.onRouteChange('home'); 
             }
-        })
-        
+        }) 
     }
 
 
