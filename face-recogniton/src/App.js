@@ -42,7 +42,6 @@ class App extends Component {
         isSignedIn: false
       }
     }
-   
 
     // storing the array of values from the API;
     calculateFaceLocation = (data) => {

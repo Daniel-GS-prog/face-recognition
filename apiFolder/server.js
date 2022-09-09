@@ -2,8 +2,11 @@
 // setting express variables:
 const express = require('express');
 const bodyParser = require('body-parser'); // always import early.
+const cors = require('cors');
+
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 /*
@@ -100,7 +103,7 @@ app.post('/image', (req, res) => {
         if (user.id === id){
             found = true;
             user.entries++
-            return res.json(user.name + ': ' + user.entries);
+            return res.json(`${user.name}: ${user.entries}`);
         }
     })
     if (!found) {
