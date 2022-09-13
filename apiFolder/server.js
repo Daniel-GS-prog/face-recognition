@@ -95,7 +95,7 @@ app.get('/profile/:id', (req, res) => { // do not include ':' in the request.
 })
 
 //image
-app.post('/image', (req, res) => {
+app.put('/image', (req, res) => {
     const {id} = req.body;
     let found = false;
 
@@ -103,7 +103,7 @@ app.post('/image', (req, res) => {
         if (user.id === id){
             found = true;
             user.entries++
-            return res.json(`${user.name}: ${user.entries}`);
+            return res.json(`${user.entries}`);
         }
     })
     if (!found) {
